@@ -3,9 +3,7 @@ import { parse } from "https://deno.land/std/encoding/csv.ts"
 import { BufReader } from "https://deno.land/std/io/bufio.ts"
 import { pick } from "https://deno.land/x/lodash@4.17.15-es/lodash.js"
 
-interface Planet {
-  [ key : string ] : string
-};
+type Planet = Record<string, string>
 
 let planets : Array<Planet>
 
