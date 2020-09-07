@@ -5,6 +5,7 @@ const app = new Application()
 const PORT = 8000
 
 app.use(api.routes())
+app.use(api.allowedMethods())
 
 app.use(async (ctx, next) => {
     await next()
