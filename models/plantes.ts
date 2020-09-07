@@ -48,3 +48,7 @@ async function loadPlanetData() {
 
 planets = await loadPlanetData()
 console.log(`${newEarths.length} habitable planets found!`)
+
+export function getAllPlantes(){
+  return planets
+}
