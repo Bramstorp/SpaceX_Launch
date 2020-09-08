@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Application, send } from "https://deno.land/x/oak/mod.ts"
 import api from "./api.ts"
 

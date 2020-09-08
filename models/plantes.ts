@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { join } from "https://deno.land/std/path/mod.ts"
 import { parse } from "https://deno.land/std/encoding/csv.ts"
 import { BufReader } from "https://deno.land/std/io/bufio.ts"

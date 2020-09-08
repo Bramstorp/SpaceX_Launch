@@ -20,14 +20,14 @@ function loadLaunches() {
 }
 
 function loadPlanets() {
-  const planets = [
-    { kepler_name: "X Æ A-12" },
-    { kepler_name: "Beta Gamma B" }
-  ];
-  const planetSelector = document.getElementById("planets-selector");
-  planets.forEach((planet) => {
-    planetSelector.innerHTML += `<option value="${planet.kepler_name}">${planet.kepler_name}</option>`;
-  });
+  return fetch("/plantes")
+    .then((planetsResponse) => planetsResponse.json())
+    .then((planets) => {
+      const planetSelector = document.getElementById("planets-selector");
+      planets.forEach((planet) => {
+        planetSelector.innerHTML += `<option value="${planet.kepler_name}">${planet.kepler_name}</option>`;
+      });
+    })
 }
 
 function abortLaunch() {
