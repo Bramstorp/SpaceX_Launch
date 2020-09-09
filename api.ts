@@ -2,6 +2,8 @@
 
 import {Router } from "https://deno.land/x/oak/mod.ts"
 import * as plantes from "./models/plantes.ts"
+import * as launches from "./models/launches.ts"
+
 const router = new Router()
 
 router.get("/", (ctx) => {
@@ -18,8 +20,12 @@ router.get("/", (ctx) => {
                             Mission Control API`
 })
 
-router.get("/plantes", (ctx)=>{
-    ctx.response.body = plantes.getAllPlantes
+router.get("/planets", (ctx)=>{
+    ctx.response.body = plantes.getAll();
+})
+
+router.get("/launches", (ctx)=>{
+  ctx.response.body = launches.getAll();
 })
 
 export default router;

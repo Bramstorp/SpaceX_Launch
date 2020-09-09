@@ -20,7 +20,7 @@ function loadLaunches() {
 }
 
 function loadPlanets() {
-  return fetch("/plantes")
+  return fetch("/planets")
     .then((planetsResponse) => planetsResponse.json())
     .then((planets) => {
       const planetSelector = document.getElementById("planets-selector");
