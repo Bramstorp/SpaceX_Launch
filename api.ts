@@ -21,11 +21,23 @@ router.get("/", (ctx) => {
 })
 
 router.get("/planets", (ctx)=>{
-    ctx.response.body = plantes.getAll();
+    ctx.response.body = plantes.getAll()
 })
 
 router.get("/launches", (ctx)=>{
-  ctx.response.body = launches.getAll();
+  ctx.response.body = launches.getAll()
+})
+
+router.get("/launches/:id", (ctx) => {
+  if (ctx.params?.id) {
+    const launchData = launches.getOne(Number(ctx.params.id))
+    if (launchData) {
+      ctx.response.body = launchData
+    } 
+    else {
+      ctx.throw(400, "theres no launches with that id")
+    }
+  }
 })
 
 export default router;
