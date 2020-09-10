@@ -12,26 +12,26 @@ const Homepage = () => {
           	</ul>
 	        
 	        <form>
-	          <div class="form-group">
+	          <div className="form-group">
 	            <label>Launch Date</label>
-	            <input class="form-control" type="date" id="launch-day" max="2030-12-31" min="2020-09-10" value="2020-09-10"/>
+	            <input className="form-control" type="date" id="launch-day" max="2030-12-31" min="2020-09-10" value="2020-09-10"/>
 	          </div>
 
-	          <div class="form-group">
+	          <div className="form-group">
 	            <label>Mission Name</label>
-	            <input class="form-control" type="text"/>
+	            <input className="form-control" type="text"/>
 	          </div>
 
-	          <div class="form-group">
+	          <div className="form-group">
 	            <label>Rocket Type</label>
-	            <select class="form-control">
+	            <select className="form-control">
 	            	<option>Falcon 9</option>
 	            </select>
 	          </div>
 
-	          <div class="form-group">
+	          <div className="form-group">
 	            <label>Destination Exoplanet</label>
-	            <select class="form-control">
+	            <select className="form-control">
 	            	<option>Kepler</option>
 	            </select>
 	          </div>
