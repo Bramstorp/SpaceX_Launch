@@ -1,7 +1,6 @@
 // @ts-nocheck
 
-import { Application, send } from "https://deno.land/x/oak/mod.ts"
-import * as log from "https://deno.land/std/log/mod.ts";
+import { log, Application, send } from "./deps.ts";
 import api from "./api.ts"
 
 const app = new Application()
@@ -57,6 +56,7 @@ app.use(async (ctx) => {
       "/javascripts/script.js",
       "/stylesheets/style.css",
       "/images/favicon.png",
+      "/videos/space.mp4",
     ]
 
     if (fileWhitelist.includes(filePath)){

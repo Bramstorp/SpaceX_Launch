@@ -1,8 +1,8 @@
 // @ts-nocheck
 
-import {Router } from "https://deno.land/x/oak/mod.ts"
-import * as plantes from "./models/plantes.ts"
+import * as planets from "./models/planets.ts"
 import * as launches from "./models/launches.ts"
+import { Router } from "./deps.ts";
 
 const router = new Router()
 
@@ -20,9 +20,9 @@ router.get("/", (ctx) => {
                             Mission Control API`
 })
 
-router.get("/planets", (ctx)=>{
-    ctx.response.body = plantes.getAll()
-})
+router.get("/planets", (ctx) => {
+  ctx.response.body = planets.getAll();
+});
 
 router.get("/launches", (ctx)=>{
   ctx.response.body = launches.getAll()
@@ -40,4 +40,20 @@ router.get("/launches/:id", (ctx) => {
   }
 })
 
-export default router;
+router.post("/launches", async (ctx) => {
+  const body = await ctx.request.body()
+
+  launches.addOne(body.value)
+
+  ctx.response.body = { success: true }
+  ctx.response.status = 201
+});
+
+router.delete("/launches/:id", (ctx) => {
+  if (ctx.params?.id) {
+    const result = launches.removeOne(Number(ctx.params.id))
+    ctx.response.body = { success: result }
+  }
+})
+
+export default router
