@@ -2,7 +2,6 @@
 
 import * as planets from "./models/planets.ts"
 import * as launches from "./models/launches.ts"
-import * as rockets from "./models/rockets.ts"
 
 import { Router } from "./deps.ts";
 
