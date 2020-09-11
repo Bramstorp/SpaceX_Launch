@@ -1,7 +1,6 @@
 // @ts-nocheck
 
-import * as log from "https://deno.land/std/log/mod.ts"
-import * as _ from "https://deno.land/x/lodash@4.17.15-es/lodash.js"
+import { log, flatMap } from "../deps.ts";
 
 interface Launch {
   flightNumber: number;
@@ -30,7 +29,7 @@ async function downloadLaunchData() {
   const launchData = await response.json();
   for (const launch of launchData) {
     const payloads = launch["rocket"]["second_stage"]["payloads"]
-    const customers = _.flatMap(payloads, (payload: any) => {
+    const customers = flatMap(payloads, (payload: any) => {
       return payload["customers"];
     });
 
@@ -38,7 +37,7 @@ async function downloadLaunchData() {
       flightNumber: launch["flight_number"],
       mission: launch["mission_name"],
       rocket: launch["rocket"]["rocket_name"],
-      launchDate: launch["launch_date_unix"],
+      launchDate: launch["launch_date_utc"],
       upcoming: launch["upcoming"],
       success: launch["launch_success"],
       customers,

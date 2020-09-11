@@ -10,5 +10,4 @@ export { oakCors } from "https://deno.land/x/cors/mod.ts";
 
 // Third party dependencies
 export { Application,Router,send, } from "https://deno.land/x/oak@v5.4.0/mod.ts";
-
 export { pick, flatMap, } from "https://deno.land/x/lodash@4.17.15-es/lodash.js";

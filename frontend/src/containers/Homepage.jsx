@@ -3,29 +3,33 @@ import axios from 'axios'
 
 import PlanetForm from "../components/planets_form"
 
+
+
 class Homepage extends Component {
 	 
     constructor() {
         super();
         this.state = {
-            planets: [],
-        }
+            planets: []
+        }	
     }
 
-	componentDidMount() {
+	componentDidMount() {		
 		axios.get("http://localhost:8000/planets")
 			.then(res => {
 				this.setState({
 					planets: res.data
 				})
 				console.log(res.data)
-			})			
+			})
+
 	}
 
-	render() {
+	render() {	
+
 		return(
 			<div>
-				<PlanetForm state={this.state.planets}/>
+				<PlanetForm state={this.state.planets} />
 			</div>
 		)
 	}

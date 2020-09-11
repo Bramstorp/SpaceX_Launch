@@ -13,3 +13,17 @@ body{
   z-index: -1;
   opacity: .20;
 }
+
+.delete{
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.delete:hover{
+  color: darkblue;
+  font-weight: bold;
+}
+
+.data-items:hover{
+  background-color: #01102f; 
+}
