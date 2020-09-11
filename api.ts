@@ -2,6 +2,8 @@
 
 import * as planets from "./models/planets.ts"
 import * as launches from "./models/launches.ts"
+import * as rockets from "./models/rockets.ts"
+
 import { Router } from "./deps.ts";
 
 const router = new Router()
@@ -54,6 +56,10 @@ router.delete("/launches/:id", (ctx) => {
     const result = launches.removeOne(Number(ctx.params.id))
     ctx.response.body = { success: result }
   }
+})
+
+router.get("/rocket", (ctx)=>{
+  ctx.response.body = rockets.getAll()
 })
 
 export default router

@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { log, Application, send } from "./deps.ts";
+import { log, Application, send, oakCors } from "./deps.ts";
 import api from "./api.ts"
 
 const app = new Application()
@@ -44,6 +44,11 @@ app.use(async (ctx, next) => {
     const delta = Date.now() - start;
     ctx.response.headers.set("x-response-time", `${delta}ms`);
 });
+
+app.use(oakCors({
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200,
+}));
 
 app.use(api.routes())
 app.use(api.allowedMethods())
