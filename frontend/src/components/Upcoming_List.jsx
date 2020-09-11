@@ -24,7 +24,7 @@ class UpcomingList extends React.Component{
 				    </div>
 
 				    <div class="col-3">
-			     		{launches.destination}
+			     		{launches.target}
 				    </div>
 
 			  	</div>
@@ -36,7 +36,7 @@ class UpcomingList extends React.Component{
 			<div className="container">
 	        	
 	        	<p className="pt-5">Upcoming missions</p>
-	        	<p>Warning! Clicking on the <span class="delete">✖</span> aborts the mission.</p>
+	        	<p>Warning! Clicking on the <span class="delete">X</span> aborts the mission.</p>
 			  	
 			  	<div class="row pt-4">
 			    	
