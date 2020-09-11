@@ -1,14 +1,21 @@
 import React from "react"
+import axios from 'axios'
 
 class UpcomingList extends React.Component{
 	
 	render() {
+		console.log(this.props.state)
+		axios.delete(`http://localhost:8000/launches/1000`)
+	        .then(res => {
+	            //console.log(res.data)
+	        })
+
 		const upcoming_launch_data= this.props.state.filter((launches) => launches.upcoming).map((launches) => { 
 			return (
 			  	<div class="row pt-2 pb-2 data-items">
 
 			  		<div class="col-1">
-			  			<a className="delete" href="">X</a> {launches.flightNumber}
+			  			<a className="delete" key={this.props.id} href="">X</a> {launches.flightNumber}
 			    	</div>
 			    	
 			    	<div class="col-3">

@@ -4,7 +4,7 @@ import axios from 'axios'
 const PlanetForm = (props) =>  {
 	    
 	    const [formData, setFormData] = useState({
-	        flightNumber:"1",
+	        flightNumber: 200,
 	        launchDate: "",
 	        mission: "",
 	        rocket: "",
@@ -28,7 +28,7 @@ const PlanetForm = (props) =>  {
 
 	        axios.post("http://localhost:8000/launches", { launchDate, mission, rocket, target, upcoming, customers, flightNumber }, config)
 	        .then(res => {
-	            console.log(res.data)
+	            //console.log(res.data)
 	        })
     	}
 

@@ -20,7 +20,7 @@ class Homepage extends Component {
 				this.setState({
 					planets: res.data
 				})
-				console.log(res.data)
+				//console.log(res.data)
 			})
 
 	}
