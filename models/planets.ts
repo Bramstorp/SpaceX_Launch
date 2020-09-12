@@ -26,12 +26,12 @@ async function loadPlanetData() {
 
   return planets.map((planet) => {
     return pick(planet, [
+      "kepid",
+      "kepoi_name",
       "kepler_name",
-      "koi_prad",
-      "koi_smass",
       "koi_srad",
+      "koi_smass",
       "koi_count",
-      "koi_steff"
     ]);
   })
 }

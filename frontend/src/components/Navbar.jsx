@@ -17,9 +17,13 @@ const Navbar = () => {
 		      </li>
 		      
 		      <li className="nav-item">
-		        <a className="nav-link" href="/history">[ History ]</a>
-		      
+		        <a className="nav-link" href="/history">[ History ]</a>		      
 		      </li>
+
+			  <li className="nav-item">
+		        <a className="nav-link" href="/Planets">[ Planets ]</a>		      
+		      </li>
+
 		    </ul>
 
 		  </div>

@@ -1,39 +1,38 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import MissionForm from "../components/Mission_Form"
+import PlanetList from "../components/Planets_List"
 
-
-
-class Homepage extends Component {
-	 
+class Planets extends Component {
+    
     constructor() {
         super();
         this.state = {
             planets: []
-        }	
+        }
     }
 
-	componentDidMount() {		
+	componentDidMount() {
 		axios.get("http://localhost:8000/planets")
 			.then(res => {
 				this.setState({
 					planets: res.data
 				})
-				//console.log(res.data)
-			})
-
+				console.log(res.data)
+			})			
 	}
 
-	render() {	
-
+	render() {
 		return(
-			<div>
-				<MissionForm state={this.state.planets} />
-			</div>
-		)
+			<PlanetList state={this.state.planets}/>
+		)	
 	}
 
 }
 
-export default Homepage
+export default Planets
+
+
+
+	 
+

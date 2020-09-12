@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const PlanetForm = (props) =>  {
+const MissionForm = (props) =>  {
 	    
 	    const [formData, setFormData] = useState({
 	        flightNumber: 200,
 	        launchDate: "",
 	        mission: "",
-	        rocket: "",
-	        target: "",
+	        rocket: "Falcon 1",
+	        target: "Kepler-227 b",
 	        upcoming: true,
 	      	customers: ["Mathias", "SpaceX"],
     	});
@@ -27,10 +27,12 @@ const PlanetForm = (props) =>  {
 	        };
 
 	        axios.post("http://localhost:8000/launches", { launchDate, mission, rocket, target, upcoming, customers, flightNumber }, config)
-	        .then(res => {
-	            //console.log(res.data)
-	        })
-    	}
+			.then(res => {
+				//console.log(res.data)
+				alert("mission has been made")
+				window.location.reload(true);
+			})
+		}
 
 		const planet_options = props.state.map((planets) => {
 			return (
@@ -42,12 +44,6 @@ const PlanetForm = (props) =>  {
 		return(
 			<div className="container">
 		        <p className="pt-5">Schedule a mission launch for intersteller travel to one of the kepler Exoplanets.</p>
-
-		        <ul>
-		            <li>0.78 M☉ &lt; Solar Mass &lt; 1.04 M☉</li>
-		            <li>0.99 R☉ &lt; Solar Radius &lt; 1.01 R☉</li>
-		            <li>0.50 R⊕ &lt; Planetary Radius &lt; 1.50 R⊕</li>     
-	          	</ul>
 		        
 		        <form onSubmit={e => onSubmit(e)}>
 
@@ -70,14 +66,14 @@ const PlanetForm = (props) =>  {
 		            </select>
 		          </div>
 
-		          <div className="form-group">
+		          <div className="form-group pb-2">
 		            <label>Destination Exoplanet</label>
 		            <select className="form-control" name='target' onChange={e => onChange(e)} value={target}>
 		            	{ planet_options }
 		            </select>
 		          </div>
-
-		          <button type="submit">[ Save Mission ]</button>
+				  
+		          <button className="btn btn-outline-primary" type="submit">Save Mission</button>
 		        </form>
 
 			</div>
@@ -85,5 +81,5 @@ const PlanetForm = (props) =>  {
 	
 }
 
-export default PlanetForm
+export default MissionForm
  
