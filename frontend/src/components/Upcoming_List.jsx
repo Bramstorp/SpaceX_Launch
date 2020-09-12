@@ -17,8 +17,13 @@ class UpcomingList extends React.Component{
 			return (
 			  	<div class="row pt-2 pb-2 data-items">
 
+					<div class="col-1">
+			  			<a className="delete" href="" onClick={this.deleteobject.bind(this, launches.flightNumber)}> X </a> 
+						<a className="delete" href="" onClick=""> O </a> 						
+			    	</div>
+
 			  		<div class="col-1">
-			  			<a className="delete" href="" onClick={this.deleteobject.bind(this, launches.flightNumber)}>X</a> {launches.flightNumber}
+						{launches.flightNumber}
 			    	</div>
 			    	
 			    	<div class="col-3">
@@ -33,7 +38,7 @@ class UpcomingList extends React.Component{
 				    	{launches.rocket}
 				    </div>
 
-				    <div class="col-3">
+				    <div class="col-2">
 			     		{launches.target}
 				    </div>
 
@@ -49,6 +54,10 @@ class UpcomingList extends React.Component{
 	        	<p>Warning! Clicking on the <span class="delete">X</span> aborts the mission.</p>
 			  	
 			  	<div class="row pt-4">
+
+				  	<div class="col-1">
+		     	 		Action  
+			    	</div>
 			    	
 			    	<div class="col-1">
 		     	 		No  
@@ -66,7 +75,7 @@ class UpcomingList extends React.Component{
 				    	Rocket
 				    </div>
 
-				    <div class="col-3">
+				    <div class="col-2">
 			     		Destination
 				    </div>
 
