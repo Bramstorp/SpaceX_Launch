@@ -13,11 +13,11 @@ const Navbar = () => {
 		      </li>
 		      
 		      <li className="nav-item">
-		        <a className="nav-link" href="/upcoming">[ Upcoming ]</a>
+		        <a className="nav-link" href="/Upcoming">[ Upcoming ]</a>
 		      </li>
 		      
 		      <li className="nav-item">
-		        <a className="nav-link" href="/history">[ History ]</a>		      
+		        <a className="nav-link" href="/History">[ History ]</a>		      
 		      </li>
 
 			  <li className="nav-item">

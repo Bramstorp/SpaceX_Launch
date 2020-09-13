@@ -11,10 +11,10 @@ import LaunchDetails from "./containers/LaunchDetails.jsx"
 const BaseRoutes  = () => (
 	<Switch>
 		<Route exact path="/" component={Homepage} />
-		<Route exact path="/upcoming" component={Upcoming} />
-		<Route exact path="/history" component={History} />
+		<Route exact path="/Upcoming" component={Upcoming} />
+		<Route exact path="/History" component={History} />
 		<Route exact path="/Planets" component={Planets} />
-		<Route exact path="/launches/:id" component={LaunchDetails} />
+		<Route exact path="/Launches/:id" component={LaunchDetails} />
 	</Switch>
 )
 

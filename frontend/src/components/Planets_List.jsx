@@ -2,7 +2,6 @@ import React from "react"
 
 class PlanetList extends React.Component {
 	render() {
-
 		const planet_data = this.props.state.map((planets) => { 
 			return (
 				<div class="row pt-2 pb-2 data-items">

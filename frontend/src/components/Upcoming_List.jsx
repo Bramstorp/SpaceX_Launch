@@ -1,5 +1,6 @@
 import React from "react"
 import axios from 'axios'
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 class UpcomingList extends React.Component{
 	
@@ -19,7 +20,7 @@ class UpcomingList extends React.Component{
 
 					<div class="col-1">
 			  			<a className="delete" href="" onClick={this.deleteobject.bind(this, launches.flightNumber)}> X </a> 
-						<a className="delete" href="" onClick=""> O </a> 						
+						<Link className="delete" href="" to={{pathname: "/launches/" + launches.flightNumber, planetData: this.props.data}}> O </Link> 						
 			    	</div>
 
 			  		<div class="col-1">

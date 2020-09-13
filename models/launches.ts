@@ -40,6 +40,9 @@ async function downloadLaunchData() {
       launchDate: launch["launch_date_utc"],
       upcoming: launch["upcoming"],
       success: launch["launch_success"],
+      launch_failure_details: launch["launch_failure_details"],
+      links: launch["links"],
+      details: launch["details"],
       customers,
     };
 
