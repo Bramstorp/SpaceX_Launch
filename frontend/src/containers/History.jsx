@@ -1,32 +1,22 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import HistoryList from "../components/History_List"
 
-class History extends Component {
-    
-    constructor() {
-        super();
-        this.state = {
-            launches: []
-        }
-    }
+const History = () => {
+    const [launches, setlaunches] = useState([]);
 
-	componentDidMount() {
-		axios.get("http://localhost:8000/launches")
-			.then(res => {
-				this.setState({
-					launches: res.data
-				})
-				//console.log(res.data)
-			})	
-	}
+	useEffect(() => {
+        axios.get("http://localhost:8000/launches")
+        .then(res => {
+            setlaunches(res.data);
+        })
+    }, []);
 
-	render() {
-		return(
-			<HistoryList state={this.state.launches}/>
-		)	
-	}
+	return(
+		<HistoryList state={launches}/>
+	)	
+	
 
 }
 

@@ -32,14 +32,13 @@ const MissionForm = (props) =>  {
 				alert("mission has been made")
 				window.location.reload(true);
 			})
-		}
+		}	
 
 		const planet_options = props.state.map((planets) => {
 			return (
         		<option>{planets.kepler_name}</option>
 	        )
 		})
-
 
 		return(
 			<div className="container">

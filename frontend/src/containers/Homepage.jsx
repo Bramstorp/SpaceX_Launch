@@ -1,38 +1,24 @@
-import React, { Component, useState } from 'react'
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import MissionForm from "../components/Mission_Form"
 
+const Homepage = () => {
+	const [planets, setplanets] = useState([]);
 
+	useEffect(() => {
+        axios.get("http://localhost:8000/planets")
+        .then(res => {
+            setplanets(res.data);
+        })
+    }, []);
 
-class Homepage extends Component {
-	 
-    constructor() {
-        super();
-        this.state = {
-            planets: []
-        }	
-    }
+	return (
+		<div>
+			<MissionForm state={planets} />
+		</div>
+	)
 
-	componentDidMount() {		
-		axios.get("http://localhost:8000/planets")
-			.then(res => {
-				this.setState({
-					planets: res.data
-				})
-				//console.log(res.data)
-			})
-
-	}
-
-	render() {	
-		return(
-			<div>
-				<MissionForm state={this.state.planets} />
-			</div>
-		)
-	}
 
 }
 

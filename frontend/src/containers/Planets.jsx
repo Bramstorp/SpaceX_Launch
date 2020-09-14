@@ -1,32 +1,42 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import PlanetList from "../components/Planets_List"
+import Pagination from "../components/Pagination"
 
-class Planets extends Component {
+const Planets = () => {
     
-    constructor() {
-        super();
-        this.state = {
-            planets: []
-        }
-    }
+	const [planets, setPlanets] = useState([]);
+	const [loading, setLoading] = useState(false);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [planetsPerPage] = useState(100);
 
-	componentDidMount() {
-		axios.get("http://localhost:8000/planets")
-			.then(res => {
-				this.setState({
-					planets: res.data
-				})
-				console.log(res.data)
-			})			
-	}
+	useEffect(() => {
+		setLoading(true)
+        axios.get("http://localhost:8000/planets")
+        .then(res => {
+            setPlanets(res.data);
+            setLoading(false)
+        })
+    }, []);
 
-	render() {
-		return(
-			<PlanetList state={this.state.planets}/>
-		)	
-	}
+  	const indexOfLastPost = currentPage * planetsPerPage
+  	const indexOfFirstPost = indexOfLastPost - planetsPerPage
+  	const currentPlanets = planets.slice(indexOfFirstPost, indexOfLastPost)
+
+  	const paginate = pageNumber => setCurrentPage(pageNumber)
+
+	return(
+		<div>
+			<PlanetList planets={currentPlanets} loading={loading} />
+	      	<Pagination
+	       		planetsPerPage={planetsPerPage}
+	        	totalPosts={planets.length}
+	        	paginate={paginate}
+	      	/>
+      	</div>
+	)	
+	
 
 }
 

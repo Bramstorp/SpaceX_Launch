@@ -27,3 +27,8 @@ body{
 .data-items:hover{
   background-color: #01102f; 
 }
+
+.page-link{
+  background-color: transparent;
+  color: white;
+}

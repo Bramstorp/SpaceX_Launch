@@ -1,32 +1,24 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import UpcomingList from "../components/Upcoming_List"
 
-class Upcoming extends Component {
+const Upcoming = () => {
     
-    constructor() {
-        super();
-        this.state = {
-            launches: []
-        }
-    }
+	const [launches, setlaunches] = useState([]);
 
-	componentDidMount() {
-		axios.get("http://localhost:8000/launches")
-			.then(res => {
-				this.setState({
-					launches: res.data
-				})
-				//console.log(res.data)
-			})			
-	}
+	useEffect(() => {
+        axios.get("http://localhost:8000/launches")
+        .then(res => {
+            setlaunches(res.data);
+        })
+    }, []);
 
-	render() {
-		return(
-			<UpcomingList state={this.state.launches} />
-		)	
-	}
+	
+	return(
+		<UpcomingList state={launches} />
+	)	
+	
 
 }
 
