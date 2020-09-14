@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar"
 import space from "../videos/space.mp4"
 
 const CustomLayout = (props) => (
-  <div>
+  <div className="container">
   	<Navbar />
 	{props.children}
 

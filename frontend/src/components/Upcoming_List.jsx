@@ -12,15 +12,15 @@ class UpcomingList extends React.Component{
 		})
 	}
 
-	render() {	
 
+	render() {	
 		const upcoming_launch_data= this.props.state.filter((launches) => launches.upcoming).map((launches) => { 
 			return (
 			  	<div class="row pt-2 pb-2 data-items">
 
 					<div class="col-1">
 			  			<a className="delete" href="" onClick={this.deleteobject.bind(this, launches.flightNumber)}> X </a> 
-						<Link className="delete" href="" to={{pathname: "/launches/" + launches.flightNumber, planetData: this.props.data}}> O </Link> 						
+						<Link className="delete" href="" to={`/launches/${launches.flightNumber}`}> O </Link> 						
 			    	</div>
 
 			  		<div class="col-1">

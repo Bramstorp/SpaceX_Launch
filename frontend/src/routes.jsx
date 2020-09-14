@@ -7,6 +7,8 @@ import History from "./containers/History.jsx"
 import Planets from "./containers/Planets.jsx"
 import LaunchDetails from "./containers/LaunchDetails.jsx"
 
+import PrivateRoute from "./components/privateRoutes.jsx"
+
 
 const BaseRoutes  = () => (
 	<Switch>
@@ -14,7 +16,7 @@ const BaseRoutes  = () => (
 		<Route exact path="/Upcoming" component={Upcoming} />
 		<Route exact path="/History" component={History} />
 		<Route exact path="/Planets" component={Planets} />
-		<Route exact path="/Launches/:id" component={LaunchDetails} />
+		<PrivateRoute exact path="/Launches/:id" component={LaunchDetails}/>
 	</Switch>
 )
 
