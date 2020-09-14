@@ -17,11 +17,6 @@ const UpcomingList = (props) => {
 		return (
 		  	<div class="row pt-2 pb-2 data-items">
 
-				<div class="col-1">
-		  			<a className="delete" href="" onClick={deleteobject.bind(this, launches.flightNumber)}> X </a> 
-					<Link className="delete" href="" to={`/launches/${launches.flightNumber}`}> O </Link> 						
-		    	</div>
-
 		  		<div class="col-1">
 					{launches.flightNumber}
 		    	</div>
@@ -42,6 +37,11 @@ const UpcomingList = (props) => {
 		     		{launches.target}
 			    </div>
 
+			    <div class="col-1">
+			    	<Link className="view" to={`/launches/${launches.flightNumber}`}> O </Link> 
+		  			<a className="delete" onClick={deleteobject.bind(this, launches.flightNumber)}> X </a> 								
+		    	</div>
+
 		  	</div>
         )
 	})
@@ -54,10 +54,6 @@ const UpcomingList = (props) => {
         	<p>Warning! Clicking on the <span class="delete">X</span> aborts the mission.</p>
 		  	
 		  	<div class="row pt-4">
-
-			  	<div class="col-1">
-	     	 		Action  
-		    	</div>
 		    	
 		    	<div class="col-1">
 	     	 		No  
@@ -78,6 +74,10 @@ const UpcomingList = (props) => {
 			    <div class="col-2">
 		     		Destination
 			    </div>
+
+			    <div class="col-1">
+	     	 		Action  
+		    	</div>
 
 		  	</div>
 

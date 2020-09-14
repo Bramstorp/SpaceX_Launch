@@ -24,6 +24,17 @@ body{
   font-weight: bold;
 }
 
+.view{
+  color: #003cff;
+  font-weight: bold;
+}
+
+.view:hover{
+  color: darkblue;
+  font-weight: bold;
+}
+
+
 .data-items:hover{
   background-color: #01102f; 
 }

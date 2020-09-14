@@ -1,4 +1,5 @@
 import React from "react"
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const HistoryList = (props) => {
 	
@@ -10,7 +11,7 @@ const HistoryList = (props) => {
 	     	 		{launches.flightNumber} 
 		    	</div>
 		    	
-		    	<div class="col-3">
+		    	<div class="col-2">
 		    	  {launches.launchDate}
 		    	</div>
 		    	
@@ -24,6 +25,10 @@ const HistoryList = (props) => {
 
 			    <div class="col-4">
 		     		{launches.customers}
+			    </div>
+
+			    <div class="col-1">
+		     		<Link className="view" to={`/launches/${launches.flightNumber}`}> View </Link> 
 			    </div>
 
 		  	</div>
@@ -42,7 +47,7 @@ const HistoryList = (props) => {
 	     	 		No 
 		    	</div>
 		    	
-		    	<div class="col-3">
+		    	<div class="col-2">
 	     	 		Date  
 		    	</div>
 		    	
@@ -56,6 +61,10 @@ const HistoryList = (props) => {
 
 			    <div class="col-4">
 		     		Customers
+			    </div>
+
+			    <div class="col-1">
+		     		Action
 			    </div>
 
 		  	</div>
