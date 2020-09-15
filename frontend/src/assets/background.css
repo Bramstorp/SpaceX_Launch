@@ -43,3 +43,11 @@ body{
   background-color: transparent;
   color: white;
 }
+
+.history-view{
+  color: white;
+}
+
+.history-view:hover{
+  color: #002f8d;
+}

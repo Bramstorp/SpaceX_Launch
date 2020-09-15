@@ -72,7 +72,7 @@ const MissionForm = (props) =>  {
 		            </select>
 		          </div>
 				  
-		          <button className="btn btn-outline-primary" type="submit">Save Mission</button>
+		          <button className="btn btn-outline-light" type="submit">Save Mission</button>
 		        </form>
 
 			</div>

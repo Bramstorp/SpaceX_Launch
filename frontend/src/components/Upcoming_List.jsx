@@ -38,9 +38,11 @@ const UpcomingList = (props) => {
 			    </div>
 
 			    <div class="col-1">
-			    	<Link className="view" to={`/launches/${launches.flightNumber}`}> O </Link> 
-		  			<a className="delete" onClick={deleteobject.bind(this, launches.flightNumber)}> X </a> 								
-		    	</div>
+					<div className="btn-group btn-block">
+			    		<Link type="button" class="btn btn-outline-info mr-1 rounded" to={`/launches/${launches.flightNumber}`}> View </Link> 
+		  				<button type="button" class="btn btn-outline-danger ml-1 rounded" href="" onClick={deleteobject.bind(this, launches.flightNumber)}> Delete </button> 								
+					</div>
+				</div>
 
 		  	</div>
         )

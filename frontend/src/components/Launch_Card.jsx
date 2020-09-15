@@ -27,7 +27,7 @@ const LaunchDetailCard = (props) => {
 				<li>Time: {detail_data.time}</li>
 			</ul>
 
-			<p className="pt-5">All information about the mission</p>
+			<p className="pt-3">All information about the mission</p>
 			<ul>
 				<li><a href={link_data.article_link}>Artile about the mission</a></li>
 				<li><a href={link_data.article_link}>Wikipedia about the mission</a></li>

@@ -28,7 +28,7 @@ const HistoryList = (props) => {
 			    </div>
 
 			    <div class="col-1">
-		     		<Link className="view" to={`/launches/${launches.flightNumber}`}> View </Link> 
+		     		<Link className="history-view" type="button" class="btn btn-outline-info" to={`/launches/${launches.flightNumber}`}> View </Link> 
 			    </div>
 
 		  	</div>
