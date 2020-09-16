@@ -1,9 +1,10 @@
 import React from "react"
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Moment from 'moment';
 
-const HistoryList = (props) => {
+const HistoryList = ({launches, loading}) => {
 	
-	const launches_data= props.state.filter((launches) => !launches.upcoming).map((launches) => { 
+	const launches_data= launches.filter((launches) => !launches.upcoming).map((launches) => { 
 		return (
 		  	<div class="row pt-2 pb-2 data-items">
 
@@ -12,7 +13,7 @@ const HistoryList = (props) => {
 		    	</div>
 		    	
 		    	<div class="col-2">
-		    	  {launches.launchDate}
+		    	  {Moment(launches.launchDate).calendar()}
 		    	</div>
 		    	
 		    	<div class="col-2">
@@ -20,7 +21,7 @@ const HistoryList = (props) => {
 			    </div>
 			    
 			    <div class="col-2">
-			    	{launches.rocket}
+			    	{launches.rocket.rocket_name}
 			    </div>
 
 			    <div class="col-4">
@@ -35,6 +36,10 @@ const HistoryList = (props) => {
         )
 	})
 
+	if (loading) {
+		return <div className="container pt-4"><h2>Loading History....</h2></div>
+  	}
+	  
 	return(
 		
 		<div className="container">

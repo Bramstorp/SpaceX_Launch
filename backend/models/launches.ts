@@ -36,7 +36,7 @@ async function downloadLaunchData() {
     const flightData = {
       flightNumber: launch["flight_number"],
       mission: launch["mission_name"],
-      rocket: launch["rocket"]["rocket_name"],
+      rocket: launch["rocket"],
       launchDate: launch["launch_date_utc"],
       upcoming: launch["upcoming"],
       success: launch["launch_success"],

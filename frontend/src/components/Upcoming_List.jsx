@@ -1,8 +1,9 @@
 import React from "react"
 import axios from 'axios'
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Moment from 'moment';
 
-const UpcomingList = (props) => {
+const UpcomingList = ({ launches, loading }) => {
 	
 	const deleteobject = (flightNumber) => {
 		axios.delete(`http://localhost:8000/launches/${flightNumber}`)
@@ -12,8 +13,11 @@ const UpcomingList = (props) => {
 		})
 	}
 
-
-	const upcoming_launch_data= props.state.filter((launches) => launches.upcoming).map((launches) => { 
+	if (loading) {
+		return <div className="container pt-4"><h2>Loading Upcoming List....</h2></div>
+	}
+	  
+	const upcoming_launch_data= launches.filter((launches) => launches.upcoming).map((launches) => { 
 		return (
 		  	<div class="row pt-2 pb-2 data-items">
 
@@ -22,7 +26,7 @@ const UpcomingList = (props) => {
 		    	</div>
 		    	
 		    	<div class="col-3">
-		    	  	{launches.launchDate}
+		    	  	{Moment(launches.launchDate).calendar()}
 		    	</div>
 		    	
 		    	<div class="col-2">
@@ -30,7 +34,7 @@ const UpcomingList = (props) => {
 			    </div>
 			    
 			    <div class="col-3">
-			    	{launches.rocket}
+			    	{launches.rocket.rocket_name}
 			    </div>
 
 			    <div class="col-2">

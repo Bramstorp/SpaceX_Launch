@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const MissionForm = (props) =>  {
+const MissionForm = ({ planets, loading }) =>  {
 	    
 	    const [formData, setFormData] = useState({
 	        flightNumber: 200,
@@ -34,12 +34,16 @@ const MissionForm = (props) =>  {
 			})
 		}	
 
-		const planet_options = props.state.map((planets) => {
+		const planet_options = planets.map((planets) => {
 			return (
         		<option>{planets.kepler_name}</option>
 	        )
 		})
 
+		if (loading) {
+			return <div className="container pt-4"><h2>Loading Mission....</h2></div>
+		}
+		
 		return(
 			<div className="container">
 		        <p className="pt-5">Schedule a mission launch for intersteller travel to one of the kepler Exoplanets.</p>
