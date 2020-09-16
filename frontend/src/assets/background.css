@@ -1,6 +1,7 @@
 body{
 	background: #001440;
-	color: #d6d6d6;
+  color: #d6d6d6;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #spacevideo {
@@ -55,3 +56,4 @@ body{
 .artile-link{
   color: white;
 }
+
