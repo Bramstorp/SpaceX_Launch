@@ -76,7 +76,7 @@ const MissionForm = ({ planets, loading }) =>  {
 		            </select>
 		          </div>
 				  
-		          <button className="btn btn-outline-light" type="submit">Save Mission</button>
+		          <button className="btn btn-outline-info" type="submit">Save Mission</button>
 		        </form>
 
 			</div>

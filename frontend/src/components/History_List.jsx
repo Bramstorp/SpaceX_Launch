@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Moment from 'moment';
 
-const HistoryList = ({launches, loading}) => {
+const HistoryList = ({ launches, loading }) => {
 	
 	const launches_data= launches.filter((launches) => !launches.upcoming).map((launches) => { 
 		return (
@@ -79,8 +79,6 @@ const HistoryList = ({launches, loading}) => {
 		  	{ launches_data }
 
 		  	<br />
-
-
 
 		</div>
 	)

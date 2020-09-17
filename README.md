@@ -14,12 +14,17 @@
 
 <br />
 
-### Tools needed 
-- npm / yarn
-- deno
+### Installation
 
+1. Ensure you have Deno installed: https://deno.land/
+2. In the terminal, run: `deno run -allow-net -allow-read mod.ts`
 
-<br />
+### Backend API
 
-### Setup project
+Ensure the backend is running by making a GET request to http://localhost:8000/
+
+### Front End
+
+Browse to the Mission Control front end at http://localhost:8000/index.html and schedule an interstellar mission launch!
+
 
