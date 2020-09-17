@@ -17,8 +17,7 @@
 ### Installation
 
 1. Ensure you have Deno installed: https://deno.land/
-2. In the terminal, run: `deno run -allow-net -allow-read mod.ts`
-3. Ensure you have node installed for npm: https://nodejs.org/en/ or yarn: https://yarnpkg.com/
+2. Ensure you have node installed for npm: https://nodejs.org/ or yarn: https://yarnpkg.com/
 
 ### Backend API
 
@@ -28,4 +27,6 @@ Ensure the backend is running by making a GET request to http://localhost:8000/
 
 Frontend is made by using react
 
+### Deploy / Development
+1. for the backend cd to the backend folder in the terminal, run: `deno run -allow-net -allow-read mod.ts`
 
