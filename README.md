@@ -18,13 +18,14 @@
 
 1. Ensure you have Deno installed: https://deno.land/
 2. In the terminal, run: `deno run -allow-net -allow-read mod.ts`
+3. Ensure you have node installed for npm: https://nodejs.org/en/ or yarn: https://yarnpkg.com/
 
 ### Backend API
 
 Ensure the backend is running by making a GET request to http://localhost:8000/
 
-### Front End
+### Frontend
 
-Browse to the Mission Control front end at http://localhost:8000/index.html and schedule an interstellar mission launch!
+Frontend is made by using react
 
 
