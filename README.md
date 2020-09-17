@@ -1,5 +1,6 @@
 ## SpaceX Launch mission system:
  - This website was build with React + Deno
+ - the data for the exo planets can be found: http://exoplanetarchive.ipac.caltech.edu/
 
 <br />
 
