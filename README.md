@@ -1,5 +1,5 @@
-## Real Estate Website:
-- This website was build with React + Deno
+## SpaceX Launch mission system:
+ - This website was build with React + Deno
 
 <br />
 
@@ -29,4 +29,4 @@ Frontend is made by using react
 
 ### Deploy / Development
 1. for the backend cd to the backend folder in the terminal, run: `deno run -allow-net -allow-read mod.ts`
-
+2. for the frontend cd to the frontend folder in the terminal, run: `npm i` for packages and then run: `npm start`
